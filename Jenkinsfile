@@ -1,27 +1,3 @@
-# A Simple HTML Webpage for Demonstrating CI-CD with Docker, Jenkins & GitHub 
-
-## Cloning the Repository
-
-```
-$git clone https://github.com/ajeetraina/webpage
-```
-
-## Building Docker Image
-
-```
-$cd webpage
-$docker build -t ajeetraina/webpage .
-```
-
-## Running the Container
-
-```
-$docker run -d -p 80:80 ajeetraina/webpage
-```
-
-## Jenkinsfile
-
-```
 node {
     def app
 
@@ -35,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ajeetraina/webpage")
+        app = docker.build("ampon/webpage")
     }
 
     stage('Test image') {
@@ -58,4 +34,3 @@ node {
         }
     }
 }
-```
